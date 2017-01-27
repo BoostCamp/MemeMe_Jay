@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>미미미</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,14 +22,20 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Just testing!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Just testing!</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SFBold.ttf</string>
+		<string>SFRegular.ttf</string>
+		<string>Impact.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Just testing!</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Just testing!</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -44,12 +52,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>SFBold.ttf</string>
-		<string>SFRegular.ttf</string>
-		<string>Impact.ttf</string>
 	</array>
 </dict>
 </plist>

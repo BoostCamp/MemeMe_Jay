@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     // 2.0 Add Code, Model
-    var memes = [Meme]()
+    public var memes = [Meme]()
 
     
     
