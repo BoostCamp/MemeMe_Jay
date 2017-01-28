@@ -10,25 +10,12 @@ import UIKit
 
 class MemeTableViewController: UITableViewController {
 
+    // MARK: properties
     var memes: [Meme]!
     var memeCount = 0
     
-    @IBOutlet weak var EditButton: UIBarButtonItem!
-    
-    @IBAction func TouchEditButton(_ sender: Any) {
-        if EditButton.title == "수정"{
-            setEditing(true, animated: false)
-            EditButton.title = "완료"
-        } else{
-            setEditing(false, animated: true)
-            EditButton.title = "수정"
-        }
-    }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.setEditing(false, animated: false)
 
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
@@ -91,11 +78,4 @@ class MemeTableViewController: UITableViewController {
             
         }
     }
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-    }
-    
- 
-    
-    
 }

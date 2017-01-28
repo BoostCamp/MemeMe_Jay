@@ -9,7 +9,8 @@
 import UIKit
 
 class MemeMakeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
-    // MARK : properties
+    
+    // MARK: properties
     @IBOutlet weak var ImagePickView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var TopTextField: UITextField!
@@ -177,6 +178,7 @@ class MemeMakeViewController: UIViewController, UIImagePickerControllerDelegate,
         
         return memedImage
     }
+    
 }
 
 

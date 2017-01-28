@@ -9,11 +9,11 @@
 import UIKit
 
 class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-
+    
+    // MARK: properties
     var meme:Meme!
     var newMemedImage:UIImage!
     
-    // MARK : properties
     @IBOutlet weak var ImagePickView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var TopTextField: UITextField!
@@ -24,6 +24,7 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var albumButton: UIBarButtonItem!
     
     @IBAction func TouchBackButton(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = false
         let _ = navigationController?.popViewController(animated: true)
     }
     
@@ -40,6 +41,7 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
             if complete {
                 print("complete")
                 self.save()
+                self.tabBarController?.tabBar.isHidden = false
                 let _ = self.navigationController?.popToRootViewController(animated: true)
             }
         }
@@ -90,6 +92,7 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         TopTextField.delegate = self
         BottomTextField.delegate = self
         ImagePickView.image = meme.originalImage
@@ -109,7 +112,7 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
         return true
     }
     
-    // MARK : keyboard hide, show appropriate height
+    // MARK: keyboard hide, show appropriate height
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
@@ -147,7 +150,7 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    // MARK : Save function
+    // MARK: Save function
     func save() {
         let meme = Meme(topText: TopTextField.text!, bottomText: BottomTextField.text!, originalImage: ImagePickView.image!, memedImage: newMemedImage)
         
@@ -155,7 +158,7 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
     }
-    
+    // MARK: generated meme
     func generateMemedImage() -> UIImage {
         Toolbar.isHidden = true
         

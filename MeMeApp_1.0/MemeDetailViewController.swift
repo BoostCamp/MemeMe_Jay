@@ -10,25 +10,23 @@ import UIKit
 
 class MemeDetailViewController: UIViewController {
 
+    // MARK: properties
     @IBOutlet weak var MemeImageView: UIImageView!
-    
     var meme:Meme!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
+    // MARK: Touch Back Button
+    // tabbar hidden 해제, back to root view controller
     @IBAction func TouchBackButton(_ sender: Any) {
         tabBarController?.tabBar.isHidden = false
         let _ = navigationController?.popToRootViewController(animated: false)
     }
     
+    // MARK: Touch Share Button
+    // use ActivityViewController. 여기서는 미미 객체에 저장은 안됨. 폰에만 저장이 되게
     @IBAction func TouchShareButton(_ sender: Any) {
         let controller = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
-        
         controller.popoverPresentationController?.sourceView = view
         present(controller, animated: false, completion: nil)
-        
         controller.completionWithItemsHandler = {
             (activityType, complete, returnedItems, activityError ) in
             if complete {
@@ -38,20 +36,18 @@ class MemeDetailViewController: UIViewController {
         }
     }
     
+    // MARK: Touch Edit Button
     @IBAction func TouchEditButton(_ sender: Any) {
         let EditController = storyboard?.instantiateViewController(withIdentifier: "MemeUpdateViewController") as! MemeUpdateViewController
         EditController.meme = self.meme
         navigationController?.pushViewController(EditController, animated: false)
     }
     
+    // MARK: ViewDidLoad function
+    // meme Image 가져오기, tabbar 숨기기
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
         MemeImageView.image = meme.memedImage
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }
