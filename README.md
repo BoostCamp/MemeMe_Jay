@@ -1,4 +1,4 @@
-## MemeMe App 2.0
+# MemeMe App 2.0
 
 #### 기본기능
 
@@ -16,13 +16,10 @@
   
 #### 스크린샷
 
-<!--
-<img src="https://github.com/hanjungv/PitchPerfect_Custom/blob/master/images/1.png" width="270"> 
-<img src="https://github.com/hanjungv/PitchPerfect_Custom/blob/master/images/2.png" width="270"> 
-<img src="https://github.com/hanjungv/PitchPerfect_Custom/blob/master/images/3.png" width="270"> 
-<img src="https://github.com/hanjungv/PitchPerfect_Custom/blob/master/images/4.png" width="270"> 
-<img src="https://github.com/hanjungv/PitchPerfect_Custom/blob/master/images/5.png" width="270"> 
--->
+<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/main.png" width="210"> 
+<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/collection.jpg" width="210"> 
+<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/detail.jpg" width="210"> 
+<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/delete.jpg" width="210"> 
 
 #### 시연영상
 * 링크 : https://youtu.be/wwhQMsjm0lE
