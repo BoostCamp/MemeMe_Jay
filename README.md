@@ -22,8 +22,7 @@
 <img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/delete.jpg" width="400"> 
 
 #### 시연영상
-
-[![Video Label](http://img.youtube.com/vi/uLR1RNqJ1Mw/0.jpg)](https://youtu.be/wwhQMsjm0lE) Video Label
+* 링크 : https://youtu.be/wwhQMsjm0lE
 
 
 #### info
