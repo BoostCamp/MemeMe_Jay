@@ -14,6 +14,13 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
     var meme:Meme!
     var newMemedImage:UIImage!
     
+    let TextAttribute = [
+        NSStrokeColorAttributeName: UIColor.black,
+        NSForegroundColorAttributeName : UIColor.white,
+        NSFontAttributeName: UIFont(name: "Impact", size: 37)!,
+        NSStrokeWidthAttributeName: -5
+    ] as [String : Any]
+    
     @IBOutlet weak var ImagePickView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var TopTextField: UITextField!
@@ -23,11 +30,13 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var albumButton: UIBarButtonItem!
     
+    // MARK: Back Button function
     @IBAction func TouchBackButton(_ sender: Any) {
         self.tabBarController?.tabBar.isHidden = false
         let _ = navigationController?.popViewController(animated: true)
     }
     
+    // MARK: Share Button function
     @IBAction func TouchShareButton(_ sender: Any) {
         newMemedImage = generateMemedImage()
         
@@ -47,13 +56,15 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
+    // MARK: Pick image function
+    // camera
     @IBAction func TouchCameraButton(_ sender: Any) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.sourceType = .camera
         present(pickerController, animated: true, completion: nil)
     }
-    
+    // album
     @IBAction func TouchAlbumButton(_ sender: Any) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -62,11 +73,8 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
         present(pickerController, animated: true, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-    }
     
+    // Mark: image picker Function
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             ImagePickView.image = image
@@ -79,29 +87,9 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
         dismiss(animated: true, completion: nil)
     }
     
+    // Mark: cancel function
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    let TextAttribute = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName : UIColor.white,
-        NSFontAttributeName: UIFont(name: "Impact", size: 37)!,
-        NSStrokeWidthAttributeName: -5
-        ] as [String : Any]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        TopTextField.delegate = self
-        BottomTextField.delegate = self
-        ImagePickView.image = meme.originalImage
-        TopTextField.text = meme.topText
-        BottomTextField.text = meme.bottomText
-        TopTextField.defaultTextAttributes = TextAttribute
-        BottomTextField.defaultTextAttributes = TextAttribute
-        TopTextField.textAlignment = .center
-        BottomTextField.textAlignment = .center
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -170,6 +158,23 @@ class MemeUpdateViewController: UIViewController, UIImagePickerControllerDelegat
         
         return memedImage
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        TopTextField.delegate = self
+        BottomTextField.delegate = self
+        ImagePickView.image = meme.originalImage
+        TopTextField.text = meme.topText
+        BottomTextField.text = meme.bottomText
+        TopTextField.defaultTextAttributes = TextAttribute
+        BottomTextField.defaultTextAttributes = TextAttribute
+        TopTextField.textAlignment = .center
+        BottomTextField.textAlignment = .center
+    }
     
 }
