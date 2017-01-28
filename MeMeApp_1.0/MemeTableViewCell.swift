@@ -10,7 +10,7 @@ import UIKit
 
 class MemeTableViewCell: UITableViewCell {
 
-    
+    // MARK: properties
     @IBOutlet weak var TableImageView: UIImageView!
     @IBOutlet weak var LblTop: UILabel!
     @IBOutlet weak var LblBottom: UILabel!

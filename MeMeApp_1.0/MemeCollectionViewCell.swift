@@ -9,5 +9,6 @@
 import UIKit
 
 class MemeCollectionViewCell: UICollectionViewCell {
+    // MARK: properties
     @IBOutlet weak var CellImageView: UIImageView!
 }
