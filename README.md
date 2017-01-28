@@ -16,10 +16,10 @@
   
 #### 스크린샷
 
-<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/main.png" width="400"> 
-<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/collection.jpg" width="400"> 
-<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/detail.jpg" width="400"> 
-<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/delete.jpg" width="400"> 
+<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/main.png" width="210"> 
+<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/collection.jpg" width="210"> 
+<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/detail.jpg" width="210"> 
+<img src="https://github.com/BoostCamp/MemeMe_Jay/blob/master/img/delete.jpg" width="210"> 
 
 #### 시연영상
 * 링크 : https://youtu.be/wwhQMsjm0lE
